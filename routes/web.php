@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeC;
+use App\Http\Controllers\DashboardC;
+use App\Http\Controllers\PesertaC;
 
 Route::get('/menu', function () {
     return view('menu');
@@ -21,6 +23,13 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/admin2', function () {
+    return view('layout.content');
+});
+
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/dashboard', [DashboardC::class, 'index']);
+Route::get('/peserta', [PesertaC::class, 'index']);
